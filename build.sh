@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Script to 7z compress all *.txt files in SecLists/Passwords
+# Script to compress all *.txt files in SecLists/Passwords
 # 
 
 if [[ ${#} -ne 1 ]]; then
@@ -23,6 +23,6 @@ git pull
 
 cd Passwords
 
-find . -type f -name "*.txt" -exec 7z a ${cwd}/Passwords/{}.7z {} \; 
+find . -type f -name "*.txt" -execdir zip ${cwd}/Passwords/{}.zip {} \; 
 
 popd > /dev/null
